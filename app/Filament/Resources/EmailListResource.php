@@ -5,7 +5,6 @@ namespace App\Filament\Resources;
 use App\Enums\EmailListStatusEnum;
 use App\Enums\TemplateEnum;
 use App\Filament\Resources\EmailListResource\Pages;
-use App\Filament\Resources\EmailListResource\RelationManagers;
 use App\Models\EmailList;
 use Filament\Forms;
 use Filament\Forms\Components\Select;
