@@ -26,8 +26,6 @@ class SubscribeAction
 			throw new AlreadySubscribedException('You are already part of this email list');
 		}
 
-		dd('here');
-
 		$payload = [
 			'user_id' => $user->id,
 			'email_list_id' => $emailList->id,
