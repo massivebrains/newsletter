@@ -1,0 +1,15 @@
+# render.yaml
+services:
+  - type: web
+    plan: free
+    name: laravel
+    runtime: docker
+    envVars:
+      - key: WEBROOT
+        value: /var/www/html/public
+      - key: RUN_SCRIPTS
+        value: 1
+      - key: REAL_IP_HEADER
+        value: 1
+      - key: SKIP_COMPOSER
+        value: 1
