@@ -2,10 +2,12 @@
 
 namespace App\Filament\Resources;
 
+use App\Enums\EmailListStatusEnum;
+use App\Enums\TemplateEnum;
 use App\Filament\Resources\EmailListResource\Pages;
-use App\Filament\Resources\EmailListResource\RelationManagers;
 use App\Models\EmailList;
 use Filament\Forms;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -26,14 +28,19 @@ class EmailListResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
+
                 Forms\Components\TextInput::make('description')
                     ->maxLength(255),
-                Forms\Components\TextInput::make('template')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('status')
+
+                Select::make('template')
+                    ->label('Template')
                     ->required()
-                    ->maxLength(255)
-                    ->default('active'),
+                    ->options(TemplateEnum::getAsOptions()),
+
+                Select::make('status')
+                    ->label('Status')
+                    ->required()
+                    ->options(EmailListStatusEnum::getAsOptions())
             ]);
     }
 
@@ -46,9 +53,11 @@ class EmailListResource extends Resource
                 Tables\Columns\TextColumn::make('description')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('template')
-                    ->searchable(),
+                    ->searchable()
+                    ->badge(),
                 Tables\Columns\TextColumn::make('status')
-                    ->searchable(),
+                    ->searchable()
+                    ->badge(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
