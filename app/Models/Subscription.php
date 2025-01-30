@@ -34,9 +34,4 @@ class Subscription extends Model
         return $this->belongsTo(EmailList::class);
     }
 
-    public function newsLetterSubscriptions(): HasMany
-    {
-        return $this->hasMany(NewsLetterSubscription::class);
-    }
-
 }
