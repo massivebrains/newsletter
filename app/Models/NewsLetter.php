@@ -32,6 +32,13 @@ class NewsLetter extends Model
 
     public function subscriptions(): HasManyThrough
     {
-        return $this->hasManyThrough(Subscription::class, EmailList::class)->whereStatus(SubscriptionStatusEnum::SUBSCRIBED);
+        return $this->hasManyThrough(
+            Subscription::class,
+            EmailList::class,
+            'id',
+            'email_list_id',
+            'email_list_id',
+            'id'
+        );
     }
 }

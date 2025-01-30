@@ -36,7 +36,7 @@ class NewsLetterNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->line($this->newsLetter->subject)
+            ->subject($this->newsLetter->subject)
             ->line($this->newsLetter->content);
     }
 }

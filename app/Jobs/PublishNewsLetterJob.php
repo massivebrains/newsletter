@@ -27,7 +27,5 @@ class PublishNewsLetterJob implements ShouldQueue
         foreach ($this->newsLetter->subscriptions as $subscription) {
             $subscription->user->notify(new NewsLetterNotification($this->newsLetter));
         }
-
-        $this->newsLetter->update(['published_at' => now()]);
     }
 }
