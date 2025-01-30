@@ -37,6 +37,6 @@ class NewsLetterNotification extends Notification
     {
         return (new MailMessage)
             ->subject($this->newsLetter->subject)
-            ->line($this->newsLetter->content);
+            ->markdown('newsletter', ['content' => $this->newsLetter->content]);
     }
 }

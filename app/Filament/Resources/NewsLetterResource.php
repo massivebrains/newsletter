@@ -24,10 +24,9 @@ class NewsLetterResource extends Resource
                 Forms\Components\Select::make('email_list_id')
                     ->relationship('emailList', 'name')
                     ->required(),
-                Forms\Components\DateTimePicker::make('published_at')
-                    ->name('Start publishing On')
+                Forms\Components\TextInput::make('subject')
                     ->required(),
-                Forms\Components\Textarea::make('content')
+                Forms\Components\RichEditor::make('content')
                     ->required()
                     ->columnSpanFull(),
             ]);
