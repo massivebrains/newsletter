@@ -3,6 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\NewsLetterResource\Pages;
+use App\Jobs\PublishNewsLetterJob;
 use App\Models\NewsLetter;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -57,6 +58,16 @@ class NewsLetterResource extends Resource
             ->actions([
                 Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\Action::make('publish')
+                    ->label('Publish')
+                    ->icon('heroicon-o-check')
+                    ->color('success')
+                    ->action(function (NewsLetter $record) {
+                        dispatch(new PublishNewsLetterJob($record));
+                        $record->update(['published_at' => now()]);
+                    })
+                    ->requiresConfirmation()
+                    ->visible(fn(NewsLetter $record) => $record->published_at === null),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

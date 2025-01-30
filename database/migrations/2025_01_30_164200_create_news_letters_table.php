@@ -13,8 +13,9 @@ return new class extends Migration {
         Schema::create('news_letters', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('email_list_id');
-            $table->datetime('published_at');
+            $table->string('subject');
             $table->text('content');
+            $table->datetime('published_at')->nullable();
             $table->timestamps();
         });
     }
