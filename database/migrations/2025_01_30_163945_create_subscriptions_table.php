@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->bigInteger('user_id');
             $table->bigInteger('email_list_id');
             $table->string('status')->default('subscribed');
-            $table->datetime('subscribed_at');
+            $table->datetime('subscribed_at')->nullable();
             $table->datetime('unsubscribed_at')->nullable();
             $table->timestamps();
         });
