@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\NewsLetterResource\Pages;
@@ -42,6 +44,10 @@ final class NewsLetterResource extends Resource
                 Tables\Columns\TextColumn::make('published_at')
                     ->dateTime()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('subscribers')
+                    ->label('Subscribers')
+                    ->sortable()
+                    ->getStateUsing(fn ($record) => $record->subscriptions->count()),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

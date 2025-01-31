@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Subscription;
 
 use App\Actions\SubscribeAction;
@@ -12,7 +14,7 @@ final class SubscribeController extends Controller
     public function __invoke(SubscribeRequest $request)
     {
         try {
-            (new SubscribeAction($request->input('email_list_id'), $request->input('email')))->handle();
+            (new SubscribeAction($request->integer('email_list_id'), $request->input('email')))->handle();
 
             session()->flash('message', 'Please check your email to confirm your subscription!');
 
