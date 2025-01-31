@@ -15,6 +15,7 @@ final class SubscribeController extends Controller
             (new SubscribeAction($request->input('email_list_id'), $request->input('email')))->handle();
 
             session()->flash('message', 'Please check your email to confirm your subscription!');
+
             return view('success');
         } catch (Throwable $th) {
             return redirect()->back()->with('error', $th->getMessage());

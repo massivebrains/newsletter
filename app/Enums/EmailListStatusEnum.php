@@ -10,7 +10,7 @@ enum EmailListStatusEnum: string
     public static function getAsOptions(): array
     {
         return collect(self::cases())
-            ->mapWithKeys(fn(EmailListStatusEnum $code) => [$code->value => ucfirst($code->name)])
+            ->mapWithKeys(fn (EmailListStatusEnum $code) => [$code->value => ucfirst($code->name)])
             ->toArray();
     }
 }

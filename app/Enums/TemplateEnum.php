@@ -9,7 +9,7 @@ enum TemplateEnum: string
     public static function getAsOptions(): array
     {
         return collect(self::cases())
-            ->mapWithKeys(fn(TemplateEnum $code) => [$code->value => ucfirst($code->name)])
+            ->mapWithKeys(fn (TemplateEnum $code) => [$code->value => ucfirst($code->name)])
             ->toArray();
     }
 }
