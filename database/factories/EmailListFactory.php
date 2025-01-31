@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Enums\EmailListStatusEnum;
+use App\Enums\TemplateEnum;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,10 @@ final class EmailListFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->unique()->word,
+            'description' => $this->faker->sentence,
+            'template' => TemplateEnum::DEFAULT,
+            'status' => EmailListStatusEnum::ACTIVE,
         ];
     }
 }
