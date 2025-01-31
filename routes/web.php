@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Http\Controllers\Subscription\ConfirmSubscriptionController;
 use App\Http\Controllers\Subscription\IndexController;
 use App\Http\Controllers\Subscription\SubscribeController;
