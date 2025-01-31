@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\SubscriptionStatusEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -21,6 +22,7 @@ final class Subscription extends Model
     protected $casts = [
         'subscribed_at' => 'datetime',
         'unsubscribed_at' => 'datetime',
+        'status' => SubscriptionStatusEnum::class,
     ];
 
     public function user(): BelongsTo

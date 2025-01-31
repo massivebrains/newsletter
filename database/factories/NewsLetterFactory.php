@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\EmailList;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,10 @@ final class NewsLetterFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'email_list_id' => EmailList::factory(),
+            'subject' => $this->faker->sentence,
+            'content' => $this->faker->paragraph,
+            'published_at' => $this->faker->dateTimeThisYear,
         ];
     }
 }
