@@ -39,6 +39,9 @@ final class NewsLetterResource extends Resource
                 Tables\Columns\TextColumn::make('emailList.name')
                     ->numeric()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('subscribers')
+                    ->label('Subscribers')
+                    ->getStateUsing(fn ($record) => $record->subscriptions->count()),
                 Tables\Columns\TextColumn::make('published_at')
                     ->dateTime()
                     ->sortable(),

@@ -17,20 +17,21 @@
         <form action="/subscribe" method="POST">
             @csrf
 
-            <div class="w-full max-w-sm min-w-[200px]">
-                <div class="relative">
-                    <select name="email_list_id" required
-                        class="w-full p-3 mb-4 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-400 shadow-sm focus:shadow-md appearance-none cursor-pointer">
-                        @foreach ($emailList as $row)
-                            <option value="{{ $row->id }}">{{ $row->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
+            <div class="w-full max-w-sm min-w-[200px] mb-4">
+                <select name="email_list_id" required
+                    class="w-full p-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300">
+                    @foreach ($emailList as $row)
+                        <option value="{{ $row->id }}">{{ $row->name }}</option>
+                    @endforeach
+                </select>
             </div>
 
-            <input type="email" name="email"
-                class="w-full p-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
-                placeholder="Enter your email" required>
+            <div class="w-full max-w-sm min-w-[200px] mb-4">
+                <input type="email" name="email"
+                    class="w-full p-2 border rounded-lg focus:outline-none focus:ring focus:ring-blue-300"
+                    placeholder="Enter your email" required>
+            </div>
+
             <button type="submit" class="w-full mt-4 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
                 Subscribe
             </button>
