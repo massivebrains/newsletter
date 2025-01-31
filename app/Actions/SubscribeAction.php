@@ -20,7 +20,7 @@ class SubscribeAction
 	public function handle()
 	{
 		$emailList = EmailList::findOrFail($this->emailListId);
-		$user = User::whereEmail($this->email)->firstOrCreate(['email' => $this->email, 'name' => 'User']);
+		$user = User::firstOrCreate(['email' => $this->email], ['email' => $this->email, 'name' => 'User']);
 
 		if ($user->isInEmailList($emailList)) {
 			throw new AlreadySubscribedException('You are already part of this email list');
