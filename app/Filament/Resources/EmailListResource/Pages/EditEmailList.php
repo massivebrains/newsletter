@@ -6,7 +6,7 @@ use App\Filament\Resources\EmailListResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
-class EditEmailList extends EditRecord
+final class EditEmailList extends EditRecord
 {
     protected static string $resource = EmailListResource::class;
 

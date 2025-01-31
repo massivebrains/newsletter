@@ -7,7 +7,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class NewsLetterNotification extends Notification
+final class NewsLetterNotification extends Notification
 {
     use Queueable;
 

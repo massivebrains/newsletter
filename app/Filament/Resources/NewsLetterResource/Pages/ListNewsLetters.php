@@ -6,7 +6,7 @@ use App\Filament\Resources\NewsLetterResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
-class ListNewsLetters extends ListRecords
+final class ListNewsLetters extends ListRecords
 {
     protected static string $resource = NewsLetterResource::class;
 

@@ -4,7 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 
-class AlreadySubscribedException extends Exception
+final class AlreadySubscribedException extends Exception
 {
     //
 }

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class EmailList extends Model
+final class EmailList extends Model
 {
     /** @use HasFactory<\Database\Factories\EmailListFactory> */
     use HasFactory;

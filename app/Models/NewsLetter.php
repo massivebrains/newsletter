@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
-class NewsLetter extends Model
+final class NewsLetter extends Model
 {
     /** @use HasFactory<\Database\Factories\NewsLetterFactory> */
     use HasFactory;

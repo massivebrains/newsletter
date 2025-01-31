@@ -6,7 +6,7 @@ use App\Filament\Resources\EmailListResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ViewRecord;
 
-class ViewEmailList extends ViewRecord
+final class ViewEmailList extends ViewRecord
 {
     protected static string $resource = EmailListResource::class;
 

@@ -6,7 +6,7 @@ use App\Filament\Resources\NewsLetterResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ViewRecord;
 
-class ViewNewsLetter extends ViewRecord
+final class ViewNewsLetter extends ViewRecord
 {
     protected static string $resource = NewsLetterResource::class;
 

@@ -4,7 +4,7 @@ namespace App\Http\Requests\Subsciption;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SubscribeRequest extends FormRequest
+final class SubscribeRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.

@@ -5,7 +5,7 @@ namespace App\Actions;
 use App\Enums\SubscriptionStatusEnum;
 use App\Models\Subscription;
 
-class ConfirmSubscriptionAction
+final class ConfirmSubscriptionAction
 {
     public function __construct(private readonly string $token) {}
 
