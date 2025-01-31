@@ -14,9 +14,7 @@ class VerifySubscriptionNotification extends Notification
     /**
      * Create a new notification instance.
      */
-    public function __construct(private readonly Subscription $subscription)
-    {
-    }
+    public function __construct(private readonly Subscription $subscription) {}
 
     /**
      * Get the notification's delivery channels.

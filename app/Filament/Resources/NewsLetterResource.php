@@ -66,7 +66,7 @@ class NewsLetterResource extends Resource
                         $record->update(['published_at' => now()]);
                     })
                     ->requiresConfirmation()
-                    ->visible(fn(NewsLetter $record) => $record->published_at === null),
+                    ->visible(fn (NewsLetter $record) => $record->published_at === null),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

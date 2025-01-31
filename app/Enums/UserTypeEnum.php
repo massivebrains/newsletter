@@ -10,7 +10,7 @@ enum UserTypeEnum: string
     public static function getAsOptions(): array
     {
         return collect(self::cases())
-            ->mapWithKeys(fn(UserTypeEnum $code) => [$code->value => ucfirst($code->name)])
+            ->mapWithKeys(fn (UserTypeEnum $code) => [$code->value => ucfirst($code->name)])
             ->toArray();
     }
 }

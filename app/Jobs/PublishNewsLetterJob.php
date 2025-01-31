@@ -14,9 +14,7 @@ class PublishNewsLetterJob implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct(private readonly NewsLetter $newsLetter)
-    {
-    }
+    public function __construct(private readonly NewsLetter $newsLetter) {}
 
     /**
      * Execute the job.

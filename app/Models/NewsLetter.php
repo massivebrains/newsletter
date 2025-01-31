@@ -2,11 +2,9 @@
 
 namespace App\Models;
 
-use App\Enums\SubscriptionStatusEnum;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class NewsLetter extends Model
@@ -22,7 +20,7 @@ class NewsLetter extends Model
     protected $guarded = [];
 
     protected $casts = [
-        'published_at' => 'datetime'
+        'published_at' => 'datetime',
     ];
 
     public function emailList(): BelongsTo
