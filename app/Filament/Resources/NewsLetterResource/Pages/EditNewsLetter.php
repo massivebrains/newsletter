@@ -6,7 +6,7 @@ use App\Filament\Resources\NewsLetterResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
-class EditNewsLetter extends EditRecord
+final class EditNewsLetter extends EditRecord
 {
     protected static string $resource = NewsLetterResource::class;
 

@@ -10,7 +10,7 @@ use App\Models\User;
 use App\Notifications\VerifySubscriptionNotification;
 use Illuminate\Support\Str;
 
-class SubscribeAction
+final class SubscribeAction
 {
     public function __construct(private readonly int $emailListId, private readonly string $email) {}
 

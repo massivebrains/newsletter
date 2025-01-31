@@ -11,7 +11,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 
-class NewsLetterResource extends Resource
+final class NewsLetterResource extends Resource
 {
     protected static ?string $model = NewsLetter::class;
 

@@ -6,7 +6,7 @@ use App\Filament\Resources\EmailListResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
-class ListEmailLists extends ListRecords
+final class ListEmailLists extends ListRecords
 {
     protected static string $resource = EmailListResource::class;
 

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\EmailTemplates>
  */
-class EmailTemplatesFactory extends Factory
+final class EmailTemplatesFactory extends Factory
 {
     /**
      * Define the model's default state.

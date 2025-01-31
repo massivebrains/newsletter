@@ -13,7 +13,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 
-class EmailListResource extends Resource
+final class EmailListResource extends Resource
 {
     protected static ?string $model = EmailList::class;
 
